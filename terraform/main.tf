@@ -3,7 +3,6 @@ provider "aws" {
 }
 
 #create S3 bucket to host web app
-
 resource "aws_s3_bucket" "create" {
   bucket = "lawngevity-landscaping-website"
 
