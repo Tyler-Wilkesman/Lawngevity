@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
-  bucket         = "file-share-tf-state"
-  key            = "file-share-state.tfstate"
+  bucket         = "lawngevity-tf-state"
+  key            = "lawngevit-website.tfstate"
   region         = "us-east-1"
   use_lockfile = true
   encrypt        = true
