@@ -40,7 +40,7 @@
   a{color:inherit; text-decoration:none;}
   img{max-width:100%; display:block;}
   ul{list-style:none;}
-  .container{max-width:1200px; margin:0 auto; padding:0 24px;}
+  .container{max-width:1400px; margin:0 auto; padding:0 5vw;}
 
   a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
     outline:3px solid var(--clay);
@@ -73,14 +73,14 @@
     padding:16px 24px; gap:24px;
   }
   .logo{
-    font-family:'Fraunces', serif;
-    font-weight:700;
-    font-size:1.4rem;
-    color:var(--forest-dark);
-    letter-spacing:0.02em;
+    display:flex; align-items:center;
   }
-  .logo span{color:var(--accent);}
-  nav.primary-nav ul{
+  .logo img{
+    height:38px;
+    width:auto;
+    display:block;
+  }
+  nav.primary-nav > ul{
     display:flex; align-items:center; gap:6px; flex-wrap:wrap;
   }
   nav.primary-nav{display:flex;}
@@ -90,7 +90,21 @@
     border-radius:4px;
   }
   .nav-item > a:hover{background:var(--cream-dark); color:var(--forest-dark);}
-  .nav-item.has-sub:hover .submenu, .nav-item.has-sub:focus-within .submenu{
+  @media (hover: hover) and (pointer: fine){
+    .nav-item.has-sub:hover .submenu{
+      display:block;
+    }
+  }
+  /* Keyboard access: keep it open only while focus is genuinely inside
+     the submenu, not merely on the trigger link (that caused it to get
+     stuck open after a single click, since focus doesn't clear itself). */
+  .submenu:focus-within{
+    display:block;
+  }
+  .nav-item.has-sub.open .submenu{
+    display:block;
+  }
+  .nav-item.has-sub.kb-open .submenu{
     display:block;
   }
   .submenu{
@@ -136,8 +150,9 @@
   }
   .hero-inner{
     position:relative;
-    padding:96px 24px 100px;
-    max-width:820px;
+    padding:96px 5vw 100px;
+    width:100%;
+    max-width:1400px;
     margin:0 auto;
     text-align:center;
   }
@@ -151,12 +166,19 @@
   .hero .eyebrow::before, .hero .eyebrow::after{background:var(--accent);}
   .hero h1{
     font-size:clamp(2.2rem, 5vw, 3.6rem);
+    line-height:1.12;
+    letter-spacing:-0.01em;
     color:var(--white);
-    margin-bottom:20px;
+    margin:0 auto 22px;
+    max-width:1250px;
   }
   .hero p.lede{
-    font-size:1.15rem; color:var(--cream-dark);
-    max-width:600px; margin:0 auto 36px;
+    font-size:1.15rem;
+    line-height:1.6;
+    font-weight:400;
+    color:var(--cream-dark);
+    max-width:1050px;
+    margin:0 auto 36px;
   }
   .hero-actions{
     display:flex; gap:14px; justify-content:center; flex-wrap:wrap;
@@ -192,10 +214,14 @@
   /* ===== Roots / intro section ===== */
   .section{padding:88px 24px;}
   .section-tight{padding:64px 24px;}
-  .section-header{max-width:640px; margin:0 auto 48px; text-align:center;}
-  .section-header .eyebrow{color:var(--clay); justify-content:center;}
+  .section-header{max-width:1150px; margin:0 auto 48px; text-align:center;}
+  .section-header .eyebrow{color:var(--clay); justify-content:center; margin-bottom:26px;}
   .section-header .eyebrow::before, .section-header .eyebrow::after{background:var(--clay);}
-  .section-header h2{font-size:clamp(1.8rem, 3.4vw, 2.5rem);}
+  .section-header h2{font-size:clamp(1.8rem, 3.4vw, 2.5rem); line-height:1.3; letter-spacing:-0.01em;}
+  .section-header p{
+    font-size:1.08rem; line-height:1.65; font-weight:400;
+    color:#5B5A52; margin-top:20px;
+  }
 
   .roots{
     display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;
@@ -390,7 +416,7 @@
 
 <header>
   <div class="nav-wrap container">
-    <a href="/" class="logo">Lawngevity<span>.</span></a>
+    <a href="/" class="logo"><img src="images/lawngevity-logo.png" alt="Lawngevity Landscape Center"></a>
 
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -433,15 +459,26 @@
 <section class="hero">
   <div class="hero-inner">
     <span class="eyebrow">Hampstead, NC · Since 2011</span>
-    <h1>Nursery, Mulch, Stone & Professional Installation — <span style="color:var(--accent);">Hampstead, NC</span></h1>
-    <p class="lede">38 Williams Love Grove Church Road, Hampstead, NC 28443 — your trusted source for bulk landscape materials and full-service landscaping.</p>
+    
+    <h1>
+      Nursery, Mulch, Stone & Professional Installation —
+      <span style="color:var(--accent);">Hampstead, NC</span>
+    </h1>
+    
+    <p class="lede">
+      38 Williams Love Grove Church Road, Hampstead, NC 28443 — your trusted source for bulk landscape materials and full-service landscaping.
+    </p>
+    
     <div class="hero-actions">
       <a class="btn btn-white" href="https://www.google.com/maps/search/?api=1&query=38+Williams+Love+Grove+Church+Rd+Hampstead+NC+28443">Get Directions</a>
       <a class="btn btn-white" href="/contact-us">Contact Us</a>
     </div>
+    
     <div class="hero-tag">🚚 We Deliver throughout Hampstead, Wilmington & Pender County</div>
   </div>
 </section>
+```
+
 
 <section class="section roots">
   <div class="container roots" style="padding:0;">
@@ -458,12 +495,14 @@
   </div>
 </section>
 
+```html
 <section class="section-tight" style="background:var(--white); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
-  <div class="container section-header">
+  <div class="container section-header" style="max-width:1200px; margin:0 auto;">
     <span class="eyebrow">What We Carry</span>
-    <h2>Hampstead's Trusted Source For Plants, Bulk Supplies & Design</h2>
-    <p style="color:#5A594F; margin-top:12px;">Quality materials are key to the success of any landscape project, no matter how big or small.</p>
+    <h2>Hampstead's Trusted Source For Plants, Bulk Supplies and Design</h2>
+    <p>Quality materials are key to the success of any landscape project, no matter how big or small.</p>
   </div>
+</section>
 
   <div class="container cat-grid">
     <div class="cat-card">
@@ -635,12 +674,7 @@
         </div>
       </div>
 
-      <!--
-        Contact form: markup only for now.
-        When the Lambda + API Gateway endpoint is ready, set the form's
-        action/fetch target to that endpoint (e.g. via JS fetch() POST
-        on submit, preventing the default page reload).
-      -->
+
       <form class="contact-form" id="contactForm">
         <div class="form-row">
           <div class="form-field">
@@ -721,25 +755,69 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Mobile menu toggle
   const menuToggle = document.getElementById('menuToggle');
   const primaryNav = document.getElementById('primaryNav');
+  const subItems = document.querySelectorAll('.nav-item.has-sub');
+  const isMobile = () => window.matchMedia('(max-width: 980px)').matches;
+  const usesClickMenu = () => isMobile() || !window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  function closeAllSubmenus(){
+    subItems.forEach(item => item.classList.remove('open'));
+  }
+
   menuToggle.addEventListener('click', () => {
     const isOpen = primaryNav.classList.toggle('open');
     menuToggle.setAttribute('aria-expanded', isOpen);
+    closeAllSubmenus();
   });
 
-  // Mobile submenu toggles
-  document.querySelectorAll('.nav-item.has-sub > a').forEach(link => {
+
+  subItems.forEach(item => {
+    const link = item.querySelector(':scope > a');
     link.addEventListener('click', (e) => {
-      if (window.innerWidth <= 980) {
-        e.preventDefault();
-        link.parentElement.classList.toggle('open');
+      if (!usesClickMenu()) return; 
+      e.preventDefault();
+      const willOpen = !item.classList.contains('open');
+      closeAllSubmenus();
+      if (willOpen) item.classList.add('open');
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (usesClickMenu() && !primaryNav.contains(e.target) && e.target !== menuToggle) {
+      closeAllSubmenus();
+    }
+  });
+
+  subItems.forEach(item => {
+    item.addEventListener('focusin', () => item.classList.add('kb-open'));
+    item.addEventListener('focusout', (e) => {
+      if (!item.contains(e.relatedTarget)) {
+        item.classList.remove('kb-open');
+      }
+    });
+  });
+  subItems.forEach(item => {
+    const link = item.querySelector(':scope > a');
+    link.addEventListener('click', () => {
+      if (!usesClickMenu()) {
+        setTimeout(() => {
+          if (document.activeElement === link) link.blur();
+        }, 150);
       }
     });
   });
 
-  // Contact form placeholder handler (replace with fetch() to your Lambda endpoint)
+
+  window.addEventListener('resize', () => {
+    if (!isMobile()) {
+      primaryNav.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', false);
+      closeAllSubmenus();
+    }
+  });
+
+
   document.getElementById('contactForm').addEventListener('submit', function(e){
     e.preventDefault();
     alert('This form is not yet connected to a backend. Wire it up to your API Gateway / Lambda endpoint to send messages.');
