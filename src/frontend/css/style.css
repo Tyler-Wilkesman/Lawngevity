@@ -198,7 +198,7 @@
   /* ===== Roots / intro section ===== */
 .roots{
   display:grid;
-  grid-template-columns:1fr;
+  grid-template-columns:0.75fr 1.25fr;
   gap:50px;
   align-items:center;
 }
@@ -218,7 +218,6 @@
   width:1260px;
   max-width:100%;
   height:560px;
-  margin:0 auto;
   overflow:hidden;
   border-radius:10px;
   box-shadow:0 16px 30px rgba(38,36,32,0.14);
@@ -231,6 +230,20 @@
   object-fit:cover;
   object-position:center;
 }
+
+/* Mobile */
+@media (max-width:900px){
+  .roots{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .roots-video-wrap{
+    width:100%;
+    height:450px;
+  }
+}
+
   /* ===== Category grid ===== */
   .cat-grid{
     display:grid;
