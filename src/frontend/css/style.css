@@ -235,18 +235,6 @@
   object-position:center;
 }
 
-/* Mobile */
-@media (max-width:900px){
-  .roots{
-    grid-template-columns:1fr;
-    gap:40px;
-  }
-
-  .roots-video-wrap{
-    height:450px;
-  }
-}
-
   /* ===== Category grid ===== */
   .cat-grid{
     display:grid;
