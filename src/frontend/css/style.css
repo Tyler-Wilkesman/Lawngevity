@@ -198,7 +198,7 @@
   /* ===== Roots / intro section ===== */
 .roots{
   display:grid;
-  grid-template-columns:0.75fr 1.25fr;
+  grid-template-columns:1.25fr 5.5fr;
   gap:70px;
   align-items:center;
   width:100%;
