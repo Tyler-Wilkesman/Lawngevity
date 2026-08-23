@@ -202,7 +202,8 @@
   gap:70px;
   align-items:center;
   width:100%;
-  margin:0 auto;
+  padding:0 40px;
+  margin:0;
 }
 
 .roots-copy{
@@ -240,10 +241,21 @@
   .roots{
     grid-template-columns:1fr;
     gap:40px;
+    padding:0 30px;
   }
 
   .roots-video-wrap{
     height:450px;
+  }
+}
+
+@media (max-width:560px){
+  .roots{
+    padding:0 24px;
+  }
+
+  .roots-video-wrap{
+    height:350px;
   }
 }
   /* ===== Category grid ===== */
