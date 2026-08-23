@@ -13,7 +13,7 @@ resource "aws_s3_bucket" "create" {
 }
 
 resource "aws_s3_bucket_ownership_controls" "owner" {
-  bucket = "lawngevity-landscaping-website"
+  bucket = "s3-lawngevity-landscaping-website"
     rule {
       object_ownership = "BucketOwnerPreferred"
   }
