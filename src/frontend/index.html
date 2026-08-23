@@ -9,6 +9,35 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+
+<style>
+  /* Video replacing the roots image area */
+  .roots-video {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 18px;
+    background: #111;
+  }
+
+  .roots-video-wrap {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    overflow: hidden;
+    border-radius: 18px;
+  }
+
+  @media (max-width: 768px) {
+    .roots-video-wrap,
+    .roots-video {
+      min-height: 280px;
+    }
+  }
+</style>
 </head>
 <body>
 
@@ -35,46 +64,37 @@
 
     <nav class="primary-nav" id="primaryNav">
       <ul>
-        <li class="nav-item active">
-        <a href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-        <a href="about.html">About</a>
+        <li class="nav-item active"><a href="index.html">Home</a></li>
+        <li class="nav-item"><a href="about.html">About</a></li>
+        <li class="nav-item has-sub">
+          <a href="storefront.html">Storefront</a>
+          <ul class="submenu">
+            <li><a href="plants.html">Plants</a></li>
+            <li><a href="retailbarn.html">Retail Barn</a></li>
+            <li><a href="rental-equipment.html">Rental Equipment</a></li>
+            <li><a href="fireplaces.html">Fireplace</a></li>
+            <li><a href="palms.html">Palms</a></li>
+            <li><a href="sod.html">Sod</a></li>
+            <li><a href="bagged-essentials.html">Bagged Essentials</a></li>
+            <li><a href="pavers.html">Paver</a></li>
+            <li><a href="edging.html">Edging</a></li>
+          </ul>
         </li>
         <li class="nav-item has-sub">
-        <a href="storefront.html">Storefront</a>
-        <ul class="submenu">
-        <li><a href="plants.html">Plants</a></li>
-        <li><a href="retailbarn.html">Retail Barn</a></li>
-        <li><a href="rental-equipment.html">Rental Equipment</a></li>
-        <li><a href="fireplaces.html">Fireplace</a></li>
-        <li><a href="palms.html">Palms</a></li>
-        <li><a href="sod.html">Sod</a></li>
-        <li><a href="bagged-essentials.html">Bagged Essentials</a></li>
-        <li><a href="pavers.html">Paver</a></li>
-        <li><a href="edging.html">Edging</a></li>
-        </ul>
+          <a href="bulk-materials.html">Bulk Materials</a>
+          <ul class="submenu">
+            <li><a href="stone.html">Stone</a></li>
+            <li><a href="mulch.html">Mulch</a></li>
+            <li><a href="dirt-and-soil.html">Dirt</a></li>
+          </ul>
         </li>
-        <li class="nav-item has-sub">
-        <a href="bulk-materials.html">Bulk Materials</a>
-        <ul class="submenu">
-        <li><a href="stone.html">Stone</a></li>
-        <li><a href="mulch.html">Mulch</a></li>
-        <li><a href="dirt-and-soil.html">Dirt</a></li>
-        </ul>
-        </li>
-        <li class="nav-item">
-        <a href="landscaping.html">Landscaping</a>
-        </li>
-        <li class="nav-item">
-        <a href="contact-us.html">Contact Us</a>
-        </li>
+        <li class="nav-item"><a href="landscaping.html">Landscaping</a></li>
+        <li class="nav-item"><a href="contact-us.html">Contact Us</a></li>
         <li class="nav-item"><a href="contact-us.html" class="nav-cta">Get A Quote</a></li>
       </ul>
     </nav>
   </div>
 </header>
-
 
 <section class="hero">
   <div class="hero-inner">
@@ -97,9 +117,20 @@
       <p>Lawngevity Landscape Center has been Hampstead's trusted source for bulk landscaping materials and professional landscaping services since 2011. We carry mulch, stone, gravel, topsoil, plants, sod, pavers, and more — with delivery available throughout the Hampstead, Wilmington, and Pender County area.</p>
       <a class="btn btn-forest" href="about.html">About Us</a>
     </div>
+
     <div class="roots-images">
-      <img src="https://static.wixstatic.com/media/b688e9_8b42ddced0d842219b5ee5b5540ce188~mv2.jpg" alt="Lawngevity Landscape Center storefront in Hampstead NC">
-      <img src="https://static.wixstatic.com/media/b688e9_228e5736208a4a4fbb25f4e9db615b5d~mv2.jpg" alt="Large selection of plants available">
+      <div class="roots-video-wrap">
+        <video class="roots-video"
+               autoplay
+               muted
+               loop
+               playsinline
+               preload="metadata"
+               aria-label="Lawngevity Landscape Center landscaping and materials">
+          <source src="videos/lawngevity.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </div>
   </div>
 </section>
@@ -114,110 +145,62 @@
   <div class="container cat-grid">
     <div class="cat-card">
       <a class="cat-img" href="mulch.html"><img src="https://static.wixstatic.com/media/b688e9_24b60e42b87e4f6d85feba3a7ea3f517~mv2.jpg" alt="Bulk black mulch available at Lawngevity"></a>
-      <div class="cat-body">
-        <h3>Mulch</h3>
-        <p>Locally sourced mulch made from recycled materials, perfect for any project's design and style needs.</p>
-        <a class="cat-link" href="mulch.html">View Our Mulch</a>
-      </div>
+      <div class="cat-body"><h3>Mulch</h3><p>Locally sourced mulch made from recycled materials, perfect for any project's design and style needs.</p><a class="cat-link" href="mulch.html">View Our Mulch</a></div>
     </div>
 
     <div class="cat-card">
       <a class="cat-img" href="stone.html"><img src="https://static.wixstatic.com/media/b688e9_d675ff689a3c4d169fe6b4a81981547a~mv2.jpg" alt="Bulk stone and gravel available at Lawngevity"></a>
-      <div class="cat-body">
-        <h3>Stone & Aggregates</h3>
-        <p>A variety of decorative and functional stones, providing the perfect solution for any project.</p>
-        <a class="cat-link" href="stone.html">View Our Stone</a>
-      </div>
+      <div class="cat-body"><h3>Stone & Aggregates</h3><p>A variety of decorative and functional stones, providing the perfect solution for any project.</p><a class="cat-link" href="stone.html">View Our Stone</a></div>
     </div>
 
     <div class="cat-card">
       <a class="cat-img" href="dirt-and-soil.html"><img src="https://static.wixstatic.com/media/b688e9_199d5b6f04204eabb493d764828efe3b~mv2.jpg" alt="Bulk soil and compost available at Lawngevity"></a>
-      <div class="cat-body">
-        <h3>Soil & Compost</h3>
-        <p>Top-quality materials ensure your landscape's health from the start, with an unbeatable topsoil blend.</p>
-        <a class="cat-link" href="dirt-and-soil.html">View Our Soil</a>
-      </div>
+      <div class="cat-body"><h3>Soil & Compost</h3><p>Top-quality materials ensure your landscape's health from the start, with an unbeatable topsoil blend.</p><a class="cat-link" href="dirt-and-soil.html">View Our Soil</a></div>
     </div>
 
     <div class="cat-card">
       <a class="cat-img" href="plants.html"><img src="https://static.wixstatic.com/media/b688e9_72bb1c2988f94f4faf6bcef94f622877~mv2.jpg" alt="Plants available at Lawngevity"></a>
-      <div class="cat-body">
-        <h3>Plants</h3>
-        <p>A variety of plants specifically suited for our coastal environment, so they thrive in their new home.</p>
-        <a class="cat-link" href="plants.html">View Our Plants</a>
-      </div>
+      <div class="cat-body"><h3>Plants</h3><p>A variety of plants specifically suited for our coastal environment, so they thrive in their new home.</p><a class="cat-link" href="plants.html">View Our Plants</a></div>
     </div>
 
     <div class="cat-card">
       <a class="cat-img" href="retailbarn.html"><img src="https://static.wixstatic.com/media/b688e9_bcefab171df44cc097cba6fdd3037a55~mv2.jpg" alt="Fertilizer, tools, pest control and edging material at Lawngevity"></a>
-      <div class="cat-body">
-        <h3>Retail Barn</h3>
-        <p>We carry fertilizers, tools, pest control, edging materials and much more.</p>
-        <a class="cat-link" href="retailbarn.html">View Retail Barn</a>
-      </div>
+      <div class="cat-body"><h3>Retail Barn</h3><p>We carry fertilizers, tools, pest control, edging materials and much more.</p><a class="cat-link" href="retailbarn.html">View Retail Barn</a></div>
     </div>
 
     <div class="cat-card">
       <a class="cat-img" href="rental-equipment.html"><img src="https://static.wixstatic.com/media/b688e9_75239e226a7147fa8e3da73016ab792a~mv2.jpg" alt="Rental equipment available at Lawngevity"></a>
-      <div class="cat-body">
-        <h3>Rental Equipment</h3>
-        <p>Aerators, sod cutters, tillers, tampers, log splitters, and more available for rental.</p>
-        <a class="cat-link" href="rental-equipment.html">View Rental Equipment</a>
-      </div>
+      <div class="cat-body"><h3>Rental Equipment</h3><p>Aerators, sod cutters, tillers, tampers, log splitters, and more available for rental.</p><a class="cat-link" href="rental-equipment.html">View Rental Equipment</a></div>
     </div>
 
     <div class="cat-card">
       <a class="cat-img" href="fireplaces.html"><img src="https://static.wixstatic.com/media/b688e9_b557de1200e94b1b96ffc8a404247500~mv2.jpg" alt="Custom fireplaces and firepits available at Lawngevity"></a>
-      <div class="cat-body">
-        <h3>Fireplaces & Firepits</h3>
-        <p>Endless possibilities — let us design a great outdoor space together.</p>
-        <a class="cat-link" href="fireplaces.html">View Our Fireplaces</a>
-      </div>
+      <div class="cat-body"><h3>Fireplaces & Firepits</h3><p>Endless possibilities — let us design a great outdoor space together.</p><a class="cat-link" href="fireplaces.html">View Our Fireplaces</a></div>
     </div>
 
     <div class="cat-card">
       <a class="cat-img" href="pavers.html"><img src="https://static.wixstatic.com/media/b688e9_2655c372d2dd41e382e7400feecad99d~mv2.jpg" alt="Pavers and custom retaining walls available at Lawngevity"></a>
-      <div class="cat-body">
-        <h3>Pavers & Retaining Walls</h3>
-        <p>Artisanal creations just waiting to happen.</p>
-        <a class="cat-link" href="pavers.html">View Our Walls</a>
-      </div>
+      <div class="cat-body"><h3>Pavers & Retaining Walls</h3><p>Artisanal creations just waiting to happen.</p><a class="cat-link" href="pavers.html">View Our Walls</a></div>
     </div>
 
     <div class="cat-card">
       <a class="cat-img" href="edging.html"><img src="https://static.wixstatic.com/media/b688e9_f6c029f3edd54badbb9081f656ff0998~mv2.jpg" alt="Edging and stepping stones available at Lawngevity"></a>
-      <div class="cat-body">
-        <h3>Edging & Stepping Stones</h3>
-        <p>Featuring Permaloc aluminum and cobble edging, plus various styles of step stone.</p>
-        <a class="cat-link" href="edging.html">View Our Products</a>
-      </div>
+      <div class="cat-body"><h3>Edging & Stepping Stones</h3><p>Featuring Permaloc aluminum and cobble edging, plus various styles of step stone.</p><a class="cat-link" href="edging.html">View Our Products</a></div>
     </div>
 
     <div class="cat-card">
       <a class="cat-img" href="sod.html"><img src="https://static.wixstatic.com/media/b688e9_1d312795753645338a407a2bc51fa7f2~mv2.jpg" alt="Sod delivery and installation available at Lawngevity"></a>
-      <div class="cat-body">
-        <h3>Sod</h3>
-        <p>A variety of sod options are available for delivery or installation.</p>
-        <a class="cat-link" href="sod.html">View Our Sod Options</a>
-      </div>
+      <div class="cat-body"><h3>Sod</h3><p>A variety of sod options are available for delivery or installation.</p><a class="cat-link" href="sod.html">View Our Sod Options</a></div>
     </div>
 
     <div class="cat-card">
       <a class="cat-img" href="palms.html"><img src="https://static.wixstatic.com/media/b688e9_18dae8e529c94c22a85878a535239df7~mv2.jpg" alt="Palm trees available at Lawngevity"></a>
-      <div class="cat-body">
-        <h3>Palms</h3>
-        <p>Sable Palmetto, Pindo, Sago and European Fan Palms.</p>
-        <a class="cat-link" href="palms.html">View Our Palm Varieties</a>
-      </div>
+      <div class="cat-body"><h3>Palms</h3><p>Sable Palmetto, Pindo, Sago and European Fan Palms.</p><a class="cat-link" href="palms.html">View Our Palm Varieties</a></div>
     </div>
 
     <div class="cat-card">
       <a class="cat-img" href="bagged-essentials.html"><img src="https://static.wixstatic.com/media/b688e9_a41e23b6feca4922a4c7229dcd2ffe3c~mv2.jpg" alt="Bagged soil available at Lawngevity"></a>
-      <div class="cat-body">
-        <h3>Bagged Essentials</h3>
-        <p>Pre-mixed items — bagged mulch coming soon.</p>
-        <a class="cat-link" href="bagged-essentials.html">View Our Products</a>
-      </div>
+      <div class="cat-body"><h3>Bagged Essentials</h3><p>Pre-mixed items — bagged mulch coming soon.</p><a class="cat-link" href="bagged-essentials.html">View Our Products</a></div>
     </div>
   </div>
 </section>
@@ -241,19 +224,11 @@
     <div class="feature-grid">
       <div class="feature-card">
         <img src="https://static.wixstatic.com/media/b688e9_3b63d407cb7b41e1a7ac692eab800261~mv2.jpg" alt="Landscaping materials available at Lawngevity in Hampstead NC">
-        <div class="feature-content">
-          <h3>Our Storefront</h3>
-          <p>Looking to purchase in bulk? Take a look inside our shop and let us help you build the project of your dreams. We deliver!</p>
-          <a class="btn btn-primary" href="storefront.html">Visit Our Storefront</a>
-        </div>
+        <div class="feature-content"><h3>Our Storefront</h3><p>Looking to purchase in bulk? Take a look inside our shop and let us help you build the project of your dreams. We deliver!</p><a class="btn btn-primary" href="storefront.html">Visit Our Storefront</a></div>
       </div>
       <div class="feature-card">
         <img src="https://static.wixstatic.com/media/b688e9_041464c0da49487e91c5c307fe42a787~mv2.png" alt="Landscaping services available at Lawngevity in Hampstead NC">
-        <div class="feature-content">
-          <h3>Landscape Service</h3>
-          <p>Need an extra hand for your project? Let our team of experts estimate and give you a free quote on the project of your dreams.</p>
-          <a class="btn btn-primary" href="landscaping.html">Get A Quote</a>
-        </div>
+        <div class="feature-content"><h3>Landscape Service</h3><p>Need an extra hand for your project? Let our team of experts estimate and give you a free quote on the project of your dreams.</p><a class="btn btn-primary" href="landscaping.html">Get A Quote</a></div>
       </div>
     </div>
   </div>
@@ -266,52 +241,21 @@
         <span class="eyebrow" style="justify-content:flex-start; color:var(--khaki);">Get In Touch</span>
         <h2>We Are Here To Help!</h2>
         <p>Have a question about materials, delivery, or a landscaping project? Send us a message and we'll get back to you.</p>
-
-        <div class="contact-detail">
-          <div class="icon">📍</div>
-          <div><strong>Visit Us</strong><span>38 Williams Love Grove Church Road, Hampstead, NC 28443</span></div>
-        </div>
-        <div class="contact-detail">
-          <div class="icon">📞</div>
-          <div><strong>Call Us</strong><span><a href="tel:9104061018">910-406-1018</a></span></div>
-        </div>
-        <div class="contact-detail">
-          <div class="icon">🕘</div>
-          <div><strong>Hours</strong><span>Mon – Sat: 8:00am – 5:00pm<br>Sun: 9:00am – 5:00pm</span></div>
-        </div>
+        <div class="contact-detail"><div class="icon">📍</div><div><strong>Visit Us</strong><span>38 Williams Love Grove Church Road, Hampstead, NC 28443</span></div></div>
+        <div class="contact-detail"><div class="icon">📞</div><div><strong>Call Us</strong><span><a href="tel:9104061018">910-406-1018</a></span></div></div>
+        <div class="contact-detail"><div class="icon">🕘</div><div><strong>Hours</strong><span>Mon – Sat: 8:00am – 5:00pm<br>Sun: 9:00am – 5:00pm</span></div></div>
       </div>
 
-      <!--
-        Contact form: markup only for now.
-        When the Lambda + API Gateway endpoint is ready, set the form's
-        action/fetch target to that endpoint (e.g. via JS fetch() POST
-        on submit, preventing the default page reload).
-      -->
       <form class="contact-form" id="contactForm">
         <div class="form-row">
-          <div class="form-field">
-            <label for="firstName">First name*</label>
-            <input type="text" id="firstName" name="firstName" required>
-          </div>
-          <div class="form-field">
-            <label for="lastName">Last name*</label>
-            <input type="text" id="lastName" name="lastName" required>
-          </div>
+          <div class="form-field"><label for="firstName">First name*</label><input type="text" id="firstName" name="firstName" required></div>
+          <div class="form-field"><label for="lastName">Last name*</label><input type="text" id="lastName" name="lastName" required></div>
         </div>
         <div class="form-row">
-          <div class="form-field">
-            <label for="email">Email*</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="form-field">
-            <label for="phone">Phone*</label>
-            <input type="tel" id="phone" name="phone" required>
-          </div>
+          <div class="form-field"><label for="email">Email*</label><input type="email" id="email" name="email" required></div>
+          <div class="form-field"><label for="phone">Phone*</label><input type="tel" id="phone" name="phone" required></div>
         </div>
-        <div class="form-field">
-          <label for="message">Message</label>
-          <textarea id="message" name="message"></textarea>
-        </div>
+        <div class="form-field"><label for="message">Message</label><textarea id="message" name="message"></textarea></div>
         <p class="form-note">This form isn't wired up to a backend yet — hook it up to your API Gateway / Lambda endpoint when ready.</p>
         <button type="submit">Submit</button>
       </form>
@@ -319,50 +263,21 @@
   </div>
 </section>
 
-
-
 <footer>
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand">
-        <h4>Lawngevity Landscape Center</h4>
-        <p>Serving Hampstead since 2011! Bulk landscape supplies, plants, and full-service installation.</p>
-      </div>
-      <div class="footer-col">
-        <h5>Explore</h5>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="storefront.html">Our Storefront</a></li>
-          <li><a href="landscaping.html">Landscaping Services</a></li>
-          <li><a href="contact-us.html">Contact Us</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Materials</h5>
-        <ul>
-          <li><a href="mulch.html">Mulch</a></li>
-          <li><a href="stone.html">Stone &amp; Gravel</a></li>
-          <li><a href="dirt-and-soil.html">Dirt &amp; Soil</a></li>
-          <li><a href="plants.html">Plants</a></li>
-          <li><a href="retailbarn.html">Chemicals</a></li>
-          <li><a href="rental-equipment.html">Rental Equipment</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Visit</h5>
-        <ul>
-          <li>38 Williams Love Grove Church Rd<br>Hampstead, NC 28443</li>
-          <li><a href="tel:9104061018">910-406-1018</a></li>
-          <li>Mon – Sat: 8am – 5pm</li>
-          <li>Sun: 9am – 5pm</li>
-        </ul>
-      </div>
+      <div class="footer-brand"><h4>Lawngevity Landscape Center</h4><p>Serving Hampstead since 2011! Bulk landscape supplies, plants, and full-service installation.</p></div>
+      <div class="footer-col"><h5>Explore</h5><ul>
+        <li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="storefront.html">Our Storefront</a></li><li><a href="landscaping.html">Landscaping Services</a></li><li><a href="contact-us.html">Contact Us</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Materials</h5><ul>
+        <li><a href="mulch.html">Mulch</a></li><li><a href="stone.html">Stone &amp; Gravel</a></li><li><a href="dirt-and-soil.html">Dirt &amp; Soil</a></li><li><a href="plants.html">Plants</a></li><li><a href="retailbarn.html">Chemicals</a></li><li><a href="rental-equipment.html">Rental Equipment</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Visit</h5><ul>
+        <li>38 Williams Love Grove Church Rd<br>Hampstead, NC 28443</li><li><a href="tel:9104061018">910-406-1018</a></li><li>Mon – Sat: 8am – 5pm</li><li>Sun: 9am – 5pm</li>
+      </ul></div>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; <span id="year"></span> Lawngevity Landscape Center. All rights reserved.</span>
-      <span>Hampstead, NC</span>
-    </div>
+    <div class="footer-bottom"><span>&copy; <span id="year"></span> Lawngevity Landscape Center. All rights reserved.</span><span>Hampstead, NC</span></div>
   </div>
 </footer>
 
