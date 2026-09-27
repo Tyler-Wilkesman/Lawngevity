@@ -14,7 +14,7 @@ resource "aws_cloudfront_distribution" "website" {
 
   enabled             = true
   is_ipv6_enabled     = true
-  default_root_object = "create"
+  default_root_object = "index.html"
   comment             = "CloudFront distribution for website"
 
   default_cache_behavior {
