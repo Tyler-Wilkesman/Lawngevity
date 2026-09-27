@@ -64,6 +64,7 @@ resource "aws_s3_object" "website_files" {
     svg  = "image/svg+xml"
     webp = "image/webp"
     ico  = "image/x-icon"
+    mp4 = "video/mp4"
   },
   lower(
     element(
@@ -76,5 +77,25 @@ resource "aws_s3_object" "website_files" {
 
   depends_on = [
     aws_s3_bucket_public_access_block.access
+  ]
+}
+
+resource "null_resource" "cloudfront_invalidation" {
+  triggers = {
+    website_files = sha1(join("", [
+      for f in fileset(
+        "${path.module}/../src/frontend",
+        "**/*"
+      ) :
+      filesha1("${path.module}/../src/frontend/${f}")
+    ]))
+  }
+
+  provisioner "local-exec" {
+    command = "aws cloudfront create-invalidation --distribution-id ${aws_cloudfront_distribution.website.id} --paths \"/*\""
+  }
+
+  depends_on = [
+    aws_s3_object.website_files
   ]
 }
