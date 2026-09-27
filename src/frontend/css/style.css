@@ -234,23 +234,6 @@
   object-fit:cover;
   object-position:center;
 }
-
-@media (max-width:980px){
-  .roots{
-    grid-template-columns:1fr;
-    gap:40px;
-  }
-
-  .roots-video-wrap{
-    height:450px;
-  }
-}
-
-@media (max-width:560px){
-  .roots-video-wrap{
-    height:350px;
-  }
-}
   /* ===== Category grid ===== */
   .cat-grid{
     display:grid;
