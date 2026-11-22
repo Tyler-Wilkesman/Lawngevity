@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Material Calculator | Lawngevity Landscape Center</title>
+<meta name="description" content="Estimate how much mulch, stone, soil or sod you need. Measure your space and find your quantity.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="topline"><span><svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /> <circle cx="12" cy="10" r="3" /></svg> 38 Williams Love Grove Church Road, Hampstead, NC 28443</span><a href="tel:9104061018"><svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /></svg> 910-406-1018</a></div>
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Lawngevity home"><img src="images/logo.png" alt="Lawngevity Landscape Center" width="245" height="62"></a>
+  <nav class="primary-nav" id="primaryNav" aria-label="Main">
+    <ul>
+      <li class="nav-item has-sub active"><a href="storefront.html">Landscape Center</a><ul class="submenu"><li><a href="shop.html">Browse Materials</a></li><li><a href="calculator.html" class="active" aria-current="page">Material Calculator</a></li><li><a href="plants.html">Plants</a></li><li><a href="retailbarn.html">Retail Barn</a></li><li><a href="rental-equipment.html">Rental Equipment</a></li><li><a href="fireplaces.html">Fireplace</a></li><li><a href="palms.html">Palms</a></li><li><a href="sod.html">Sod</a></li><li><a href="bagged-essentials.html">Bagged Essentials</a></li><li><a href="pavers.html">Pavers</a></li><li><a href="edging.html">Edging</a></li></ul></li>
+      <li class="nav-item"><a href="landscaping.html">Design &amp; Installation</a></li>
+      <li class="nav-item has-sub"><a href="bulk-materials.html">Products</a><ul class="submenu"><li><a href="stone.html">Stone</a></li><li><a href="mulch.html">Mulch</a></li><li><a href="dirt-and-soil.html">Dirt</a></li></ul></li>
+      <li class="nav-item"><a href="index.html#projects">Projects</a></li>
+      <li class="nav-item"><a href="about.html">About</a></li>
+      <li class="nav-item"><a href="contact-us.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="header-actions">
+    <a class="button header-phone" href="tel:9104061018"><svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /></svg> 910-406-1018</a>
+    <a class="button yellow header-quote" href="contact-us.html">Get a free quote</a>
+  </div>
+  <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+<main id="main">
+<section class="section">
+  <span class="eyebrow">Plan your project</span>
+  <h1 class="page-title">Material calculator</h1>
+  <p class="intro">Measure your space and find your quantity, then call us to order.</p>
+  <div class="calc-layout">
+    <form class="panel" id="calcForm" novalidate>
+      <h2>Your project</h2>
+      <label>Material<select id="material"></select></label>
+      <label>Area shape<select id="shape"><option value="rectangle">Rectangle</option><option value="circle">Circle</option><option value="area">I know the square footage</option></select></label>
+      <div class="input-grid">
+        <label id="areaField" hidden>Area (square feet)<input id="area" type="number" min="0.01" step="any" value="200"></label>
+        <label id="lengthField"><span id="lengthLabel">Length (feet)</span><input id="length" type="number" min="0.01" step="any" value="20"></label>
+        <label id="widthField">Width (feet)<input id="width" type="number" min="0.01" step="any" value="10"></label>
+        <label id="depthField">Depth (inches)<input id="depth" type="number" min="0.01" step="0.5" value="3"></label>
+        <label>Extra allowance (%)<input id="waste" type="number" min="0" max="30" step="any" value="10"></label>
+      </div>
+      <p class="fine">Measure separate beds individually and add the results together. Extra allowance covers irregular edges and settling.</p>
+    </form>
+    <div class="calc-result" id="calcResult" aria-live="polite"></div>
+  </div>
+  <div class="help-strip"><div><h3>Need a hand measuring?</h3><p>Our team can help with quantities, material selection, and installation.</p></div>
+    <a class="button outline" href="tel:9104061018">Talk to Lawngevity</a></div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div><img class="footer-logo" src="images/logo.png" alt="Lawngevity" width="205" height="52">
+      <p>Nursery. Materials. Design. Installation.<br>Rooted in our community since 2011.</p></div>
+    <div><h3><svg class="icon" width="17" height="17" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /> <circle cx="12" cy="10" r="3" /></svg> Visit the landscape center</h3><p>38 Williams Love Grove Church Road<br>Hampstead, NC 28443</p>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=38+Williams+Love+Grove+Church+Road+Hampstead+NC" target="_blank" rel="noopener">Get directions</a></div>
+    <div><h3><svg class="icon" width="17" height="17" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /> <path d="M12 6v6l4 2" /></svg> Hours &amp; contact</h3><a href="tel:9104061018">(910) 406-1018</a>
+      <p>Monday–Saturday: 8am–5pm<br>Sunday: 9am–5pm</p></div>
+    <div><h3>Explore</h3><ul>
+      <li><a href="storefront.html">Landscape Center</a></li><li><a href="shop.html">Browse Materials</a></li><li><a href="calculator.html">Material Calculator</a></li>
+      <li><a href="landscaping.html">Design &amp; Installation</a></li><li><a href="about.html">About Us</a></li><li><a href="contact-us.html">Contact Us</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>&copy; <span id="year"></span> Lawngevity Landscape Center. All rights reserved.</span><span>Hampstead · Wilmington · Surrounding communities</span></div>
+</footer>
+<script src="js/icons.js"></script>
+<script src="js/catalog.js"></script>
+<script src="js/main.js"></script>
+<script src="js/calculator.js"></script>
+</body>
+</html>
